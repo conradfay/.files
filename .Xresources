@@ -1,0 +1,44 @@
+URxvt*geometry:                53x20
+URxvt*font:  xft:Terminus:size=10
+URxvt*depth:                32
+URxvt*borderless: 1
+URxvt*scrollBar:            false
+URxvt*saveLines:  5000
+URxvt*termName:    rxvt-unicode
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: firefox
+URxvt.matcher.button: 1
+URxvt.cursorBlink: 1
+!URxvt.cursorUnderline: 1
+
+!colors:
+*background:    #292929
+*foreground:    #ffffff
+
+! Black 
+*color0:                            #000000
+*color8:                            #444444
+! Red
+*color1:                            #B28284
+*color9:                            #CC9597
+! Green
+*color2:                            #82B284
+*color10:                           #95CC97
+! Yellow
+*color3:                            #B2B282
+*color11:                           #CCCC95
+! Blue
+*color4:                            #8292B2
+*color12:                           #95A7CC
+! Magenta
+*color5:                            #A082B2
+*color13:                           #B795CC
+! Cyan
+*color6:                            #82B2A6
+*color14:                           #95CCBE
+! White
+*color7:                            #B2B2B2
+*color15:                           #BDBDBD
+
+
+
