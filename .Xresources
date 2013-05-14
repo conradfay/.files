@@ -5,11 +5,21 @@ URxvt*borderless: 1
 URxvt*scrollBar:            false
 URxvt*saveLines:  5000
 URxvt*termName:    rxvt-unicode
-URxvt.perl-ext-common: default,matcher
+!URxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher: firefox
 URxvt.matcher.button: 1
 URxvt.cursorBlink: 1
 !URxvt.cursorUnderline: 1
+
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.clipboard.autocopy: true
+URxvt.url-select.launcher:  chromium
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
 
 !colors:
 *background:    #292929

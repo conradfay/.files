@@ -89,7 +89,7 @@ end
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ "[1:Main]", "[2:Term]", "[3:Dev]", "[4:Media]", "[5:Social]", 6, 7, 8, 9 }, s,
+    tags[s] = awful.tag({ "[❤]", "[>_]", "[//]", "[♫]", "[#]", 6, 7, 8, 9 }, s,
     {
         layouts[1], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2]
     })
@@ -335,7 +335,8 @@ globalkeys = awful.util.table.join(
               end),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end),
-    awful.key({ modkey            }, "i", function() awful.util.spawn( "dmenu_run -i" ) end)
+    --awful.key({ modkey            }, "i", function() awful.util.spawn( "dmenu_run -i" ) end)
+    awful.key({ modkey            }, "i", function() awful.util.spawn( "dmenu-launch" ) end)
 )
 
 clientkeys = awful.util.table.join(
@@ -440,6 +441,8 @@ client.connect_signal("manage", function (c, startup)
             client.focus = c
         end
     end)
+
+		c.size_hints_honor=false
 
     if not startup then
         -- Set the windows at the slave,
