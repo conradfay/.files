@@ -1,3 +1,5 @@
+map <C-b> :NERDTreeFind<CR>
+
 set clipboard=unnamed
 set shiftwidth=2
 set tabstop=2

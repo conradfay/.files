@@ -13,7 +13,7 @@ export PYTHONPATH=/usr/lib/python3.3/site-packages
 alias hack='~/Scripts/hack.exe'
 alias controlpanel='lua ~/Scripts/3spooky.lua'
 alias supersplit='~/Dropbox/Scripts/supersplit.sh'
-alias multimon='xrandr --output HDMI1 --mode 1440x900 --above LVDS1;xrandr --output LVDS1 --mode 1366x768 --below HDMI1'
+alias multimon='xrandr --output HDMI1 --mode 1440x900 --left-of LVDS1'
 alias topmon='xrandr --output HDMI1 --mode 1440x900;xrandr --output LVDS1 --off'
 
 alias ls='ls --color=auto'

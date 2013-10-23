@@ -1,36 +1,27 @@
 URxvt*geometry:                53x20
-!URxvt*font:               -misc-tamsyn-medium-*-*--14-101-*-*-*-*-*
-!URxvt*boldFont:           -misc-tamsyn-medium-*-*--14-101-*-*-*-*-*
 URxvt*font:  xft:Terminus:size=9
 URxvt*boldFont:  xft:Terminus:size=9
-!URxvt*font:  xft:Ubuntu Mono derivative Powerline:size=9
-!URxvt*boldFont:  xft:Ubuntu Mono derivative Powerline:size=9
-URxvt*depth:                32
-URxvt*borderless: 1
-URxvt*scrollBar:            false
-URxvt*saveLines:  5000
-URxvt*termName:    rxvt-unicode
-!URxvt.perl-ext-common: default,matcher,fullscreen
-URxvt.urlLauncher: luakit
+URxvt.depth:  32
+URxvt.borderless: 1
+URxvt.scrollBar: false
+URxvt.saveLines: 5000
+URxvt.termName:  rxvt-unicode
+URxvt.urlLauncher: chromium
 URxvt.matcher.button: 1
 URxvt.cursorBlink: 1
-!URxvt*cursorColor:        #535353
-!URxvt.transparent: true
-!URxvt.shading: 20
-!URxvt.cursorUnderline: 1
+! Example of bitmap font
+!URxvt*font:               -misc-tamsyn-medium-*-*--14-101-*-*-*-*-*
+!URxvt*boldFont:           -misc-tamsyn-medium-*-*--14-101-*-*-*-*-*
 
-URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,fullscreen
-URxvt.keysym.M-c: perl:clipboard:copy
-URxvt.keysym.M-v: perl:clipboard:paste
+! Plugins
+URxvt.perl-ext-common:      default,clipboard,fullscreen
+URxvt.iso14755: False
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.keysym.F11: perl:fullscreen:switch
-!URxvt.clipboard.autocopy: true
-!URxvt.url-select.launcher:  chromium
-!URxvt.url-select.underline: true
-URxvt.keysym.M-u:           perl:url-select:select_next
-URxvt.keysym.M-Escape:      perl:keyboard-select:activate
-URxvt.keysym.M-s:           perl:keyboard-select:search
+URxvt.clipboard.autocopy: true
 
-! Terminal colors ----------------------------------------------
+! Color Scheme
 *background:#242424
 *foreground:#e8e9ca
 
