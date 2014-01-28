@@ -9,22 +9,12 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-# startup
-#exec_always compton -c -C -t-5 -l-5 -r4.2 -o.55
-exec_always compton
-#exec_always feh --bg-fill ~/Pictures/rikka.jpg
-exec_always feh --bg-fill ~/Dropbox/Photos/Wallpapers/Wallbase/cartoonsouls.jpg
-#exec_always twmnd
-#exec_always twmnc -t Welcome -c commander
-exec_always notify-send "Welcome back commander"
-exec_always mpd-notify
-#exec_always ~/bin/randomfortune.sh
-
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 #font -misc-tamsyn-medium-*-*--14-101-*-*-*-*-*
+#font -*-lemon-medium-*-*-*-*-*-*-*-*-*-*-*
 font pango:Terminus 9 
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
@@ -42,7 +32,8 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+c kill
 
 # start dmenu (a program launcher)
-bindsym $mod+p exec dmenu-launch
+#bindsym $mod+p exec dmenu-launch
+bindsym $mod+p exec dmenu_run -nb '#333' -nf '#ccc' -sb '#cf6a4c' -sf '#1a1a1a' -fn '-*-Terminus-medium-r-*-*-*-*-*-*-*-*-*-*'
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -159,12 +150,14 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         #status_command i3status -c ~/.i3status.conf
-        status_command ~/bin/i3status-mod.sh
+        #status_command ~/Library/bin/i3status-mod.sh
+        status_command ~/Dropbox/library/bin/i3bar.py
         position top
         tray_output primary
         workspace_buttons yes
 
         colors {
+                              #border backgr  text
           background          #333333
           statusline          #b3b3b3
           active_workspace    #333333 #333333 #ffffff
@@ -175,13 +168,22 @@ bar {
 
 new_window pixel 5
 
-# window decorations    border  backgr. text    indicator
-client.focused          #333333 #333333 #ffffff
+# light red: cf6a4c
+# light yello: #ffb964
+# dark red: b85335
+# dark grey: 333333
+# darker grey: 1a1a1a
+# light grey: cccccc
+# cream: #f7d5c3
+# white: ffffff
+
+# window decorations     border  backgr. text    indicator
+client.focused          #cf6a4c #cf6a4c #333333
 client.focused_inactive #1a1a1a #1a1a1a #cccccc
 client.unfocused        #1a1a1a #1a1a1a #cccccc
 
 #bindsym XF86AudioRaiseVolume exec amixer set Master 2%+
 #bindsym XF86AudioLowerVolume exec amixer set Master 2%-
-bindsym XF86AudioRaiseVolume exec ~/bin/vol.sh up
-bindsym XF86AudioLowerVolume exec ~/bin/vol.sh down
+bindsym XF86AudioRaiseVolume exec vol.sh up
+bindsym XF86AudioLowerVolume exec vol.sh down
 

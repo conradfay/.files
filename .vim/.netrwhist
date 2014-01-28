@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/conradfay/.i3'
-let g:netrw_dirhist_2='/home/conradfay'
-let g:netrw_dirhist_3='/home/conradfay/.config/dwb'
-let g:netrw_dirhist_4='/home/conradfay/.vim'
-let g:netrw_dirhist_5='/home/conradfay/Projects/OpenGL_Tut'
-let g:netrw_dirhist_6='/home/conradfay/Projects/PhysEngine'
