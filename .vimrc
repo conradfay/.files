@@ -15,6 +15,7 @@ Bundle 'git://github.com/jcf/vim-latex.git'
 Bundle 'git://github.com/xuhdev/vim-latex-live-preview.git'
 Bundle 'git://github.com/majutsushi/tagbar.git'
 Bundle 'git://github.com/scrooloose/syntastic.git'
+Bundle 'git://github.com/scrooloose/nerdtree.git'
 Bundle 'git://github.com/Valloric/YouCompleteMe.git'
 Bundle 'git://github.com/Raimondi/delimitMate.git'
 Bundle 'git://github.com/hynek/vim-python-pep8-indent.git'
@@ -55,9 +56,9 @@ map <C-S-x> :Tagbar<CR>
 "let g:Powerline_symbols = 'fancy'
 
 " Directories
-set dir=~/.vim/tmp/,.
-set backupdir=~/.vim/tmp/,.
-set undodir=~/.vim/tmp/,.
+set dir=~/.vim/tmp/,/var/tmp/,.
+set backupdir=~/.vim/tmp/,/var/tmp,.
+set undodir=~/.vim/tmp/,/var/tmp,.
 
 " Color
 colorscheme kolor
