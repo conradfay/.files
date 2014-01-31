@@ -58,9 +58,9 @@ map <C-S-x> :Tagbar<CR>
 "let g:Powerline_symbols = 'fancy'
 
 " Directories
-set dir=~/.vim/tmp/,.
-set backupdir=~/.vim/tmp/,.
-set undodir=~/.vim/tmp/,.
+set dir=~/.vim/tmp/,/var/tmp/,.
+set backupdir=~/.vim/tmp/,/var/tmp,.
+set undodir=~/.vim/tmp/,/var/tmp,.
 
 " Color
 colorscheme kolor
