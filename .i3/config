@@ -151,7 +151,7 @@ bindsym $mod+r mode "resize"
 bar {
         #status_command i3status -c ~/.i3status.conf
         #status_command ~/Library/bin/i3status-mod.sh
-        status_command ~/Dropbox/library/bin/i3bar.py
+        status_command ~/dotfiles/bin/i3bar.py
         position top
         tray_output primary
         workspace_buttons yes
