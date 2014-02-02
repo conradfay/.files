@@ -7,10 +7,8 @@ call vundle#rc()
 " let Vundle manage Vundle
 " " required! 
 Bundle 'gmarik/vundle'
-Bundle 'git://github.com/freitass/todo.txt-vim.git'
 Bundle 'git://github.com/Lokaltog/vim-easymotion.git'
 Bundle 'git://github.com/itchyny/calendar.vim.git'
-Bundle 'git://github.com/kien/ctrlp.vim.git'
 Bundle 'git://github.com/jcf/vim-latex.git'
 Bundle 'git://github.com/xuhdev/vim-latex-live-preview.git'
 Bundle 'git://github.com/majutsushi/tagbar.git'
@@ -24,14 +22,25 @@ Bundle 'git://github.com/Lokaltog/vim-powerline.git'
 Bundle 'git://github.com/Shougo/unite.vim.git'
 Bundle 'git://github.com/Shougo/vimproc.vim'
 "Bundle 'git://github.com/klen/python-mode.git'
+"Bundle 'git://github.com/freitass/todo.txt-vim.git'
+"Bundle 'git://github.com/kien/ctrlp.vim.git'
 
 " Calendar
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
 " CtrlP
-let g:ctrlp_cmd = 'CtrlPMixed'
-set wildignore+=*/doc/*,*.o
+"let g:ctrlp_cmd = 'CtrlPMixed'
+"set wildignore+=*/doc/*,*.o
+
+" EasyMotion
+let g:EasyMotion_leader_key = '<Leader>'
+
+" NERDTree
+noremap <leader>z :NERDTreeToggle<CR>
+
+" Powerline
+"let g:Powerline_symbols = 'fancy'
 
 " Syntastic
 let g:syntastic_cpp_include_dirs = ['include', '../include']
@@ -42,20 +51,21 @@ set statusline+=%{SyntasticStatuslineFlag()}
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_checker_args='--ignore=E501,E225'
 let g:syntastic_enable_signs=1
-"let g:syntastic_auto_loc_list=1
-
-" YouCompleteMe
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
-
-" NERDTree
-map <C-S-z> :NERDTreeToggle<CR>
 
 " Tagbar
-map <C-S-x> :Tagbar<CR>
+noremap <leader>x :Tagbar<CR>
 
-" Powerline
-"let g:Powerline_symbols = 'fancy'
+" Unite
+let g:unite_source_history_yank_enable = 1
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+noremap <C-p> :Unite -no-split -buffer-name=files -start-insert file_rec/async<cr>
+
+" YouCompleteMe *REQUIRES PYTHON2.7*
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
+"let g:ycm_server_use_vim_stdout = 1
+"let g:ycm_server_log_level = 'debug'
 
 " Directories
 set dir=~/.vim/tmp/,/var/tmp/,.
@@ -67,8 +77,8 @@ colorscheme kolor
 
 " Allow scroll
 set mouse=a
-map <ScrollWheelUp> <C-Y> <C-Y> <C-Y>
-map <ScrollWheelDown> <C-E> <C-E> <C-E>
+noremap <ScrollWheelUp> <C-Y> <C-Y> <C-Y>
+noremap <ScrollWheelDown> <C-E> <C-E> <C-E>
 
 " GUI
 set guioptions-=T " Remove toolbar

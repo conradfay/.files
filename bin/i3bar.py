@@ -10,7 +10,7 @@ import select
 class ConStatus():
     widgets = {}
     status = []  # JSON encoding of status
-    clickEvents = True
+    clickEvents = False
 
     def __init__(self, widgets):
         self.widgets = widgets
@@ -118,7 +118,7 @@ class BatWidget(TextWidget):
         else:
             text = BAT_PLUGGED_UNICODE
 
-        self.text = text
+        self.text = text.rstrip()
 
     def __bat_stats(self):
         acpi = subprocess.Popen(
@@ -184,7 +184,7 @@ class DateWidget(TextWidget):
 
         text = CLOCK_UNICODE + ' ' + dateStr
 
-        self.text = text
+        self.text = text.rstrip()
 
 
 class VolWidget(TextWidget):
@@ -203,7 +203,7 @@ class VolWidget(TextWidget):
         else:
             text = MUTE_UNICODE
 
-        self.text = text
+        self.text = text.rstrip()
 
     def __speaker_status(self):
         amixer = subprocess.Popen(

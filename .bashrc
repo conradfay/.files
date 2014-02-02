@@ -5,8 +5,8 @@
 
 # Environment variables
 export EDITOR=vim
-#export PYTHONPATH=/usr/lib/python3.3/site-packages
-export BROWSER=chromium
+export PYTHONPATH=/usr/lib/python3.3/site-packages
+export BROWSER=firefox
 export PATH=$PATH:~/dotfiles/bin
 export FONT=Lat2-Terminus16
 export XMMS_PATH="tcp://192.168.1.10:5555"
