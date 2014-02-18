@@ -151,7 +151,7 @@ bindsym $mod+r mode "resize"
 bar {
         #status_command i3status
         #status_command ~/Library/bin/i3status-mod.sh
-        status_command ~/dotfiles/bin/i3bar.py
+        status_command ~/.files/bin/i3bar.py
         position top
         tray_output primary
         workspace_buttons yes
@@ -184,6 +184,6 @@ client.unfocused        #1a1a1a #1a1a1a #cccccc
 
 #bindsym XF86AudioRaiseVolume exec amixer set Master 2%+
 #bindsym XF86AudioLowerVolume exec amixer set Master 2%-
-bindsym XF86AudioRaiseVolume exec ~/dotfiles/bin/vol.sh up
-bindsym XF86AudioLowerVolume exec ~/dotfiles/bin/vol.sh down
+bindsym XF86AudioRaiseVolume exec ~/.files/bin/vol.sh up
+bindsym XF86AudioLowerVolume exec ~/.files/bin/vol.sh down
 
