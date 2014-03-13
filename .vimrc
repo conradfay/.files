@@ -1,3 +1,4 @@
+"
 " Vundle
 set nocompatible              " be iMproved
 filetype off                  " required!
@@ -14,13 +15,15 @@ Bundle 'git://github.com/xuhdev/vim-latex-live-preview.git'
 Bundle 'git://github.com/majutsushi/tagbar.git'
 Bundle 'git://github.com/scrooloose/syntastic.git'
 Bundle 'git://github.com/scrooloose/nerdtree.git'
-Bundle 'git://github.com/Valloric/YouCompleteMe.git'
+Bundle 'git://github.com/Shougo/neocomplcache.vim.git'
+Bundle 'git://github.com/ervandew/supertab.git'
 Bundle 'git://github.com/Raimondi/delimitMate.git'
 Bundle 'git://github.com/hynek/vim-python-pep8-indent.git'
 Bundle 'git://github.com/zeis/vim-kolor.git'
 Bundle 'git://github.com/Lokaltog/vim-powerline.git'
 Bundle 'git://github.com/Shougo/unite.vim.git'
 Bundle 'git://github.com/Shougo/vimproc.vim'
+"Bundle 'git://github.com/Valloric/YouCompleteMe.git'
 "Bundle 'git://github.com/klen/python-mode.git'
 "Bundle 'git://github.com/freitass/todo.txt-vim.git'
 "Bundle 'git://github.com/kien/ctrlp.vim.git'
@@ -52,6 +55,13 @@ let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_checker_args='--ignore=E501,E225'
 let g:syntastic_enable_signs=1
 
+" Supertab
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+" NeoCompleteCache
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+
 " Tagbar
 noremap <leader>x :Tagbar<CR>
 
@@ -61,9 +71,9 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 noremap <C-p> :Unite -no-split -buffer-name=files -start-insert file_rec/async<cr>
 
 " YouCompleteMe *REQUIRES PYTHON2.7*
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
+"let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+"let g:ycm_confirm_extra_conf = 0
+"let g:ycm_path_to_python_interpreter = '/usr/bin/python1'
 "let g:ycm_server_use_vim_stdout = 1
 "let g:ycm_server_log_level = 'debug'
 
@@ -86,6 +96,11 @@ set guioptions-=r " Remove right scrollbar
 set guioptions-=L " Remove left scrollbar
 set guifont=Terminus\ 10
 
+" Syntax 
+au BufNewFile,BufRead *.l set filetype=lisp
+au BufNewFile,BufRead *.l set tabstop=2
+au BufNewFile,BufRead *.l set shiftwidth=2
+
 " Misc Options
 set encoding=utf-8 " Necessary to show Unicode glyphs
 set hlsearch
@@ -102,4 +117,5 @@ set number
 set undofile
 set statusline=
 syntax on
+set omnifunc=syntaxcomplete#Complete
 filetype plugin indent on

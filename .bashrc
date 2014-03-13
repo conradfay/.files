@@ -13,7 +13,8 @@ export XMMS_PATH="tcp://192.168.1.10:5555"
 export TERM=xterm-256color
 
 # xrandr
-alias multimon='xrandr --output HDMI1 --mode 1440x900 --left-of LVDS1; pactl set-card-profile 0 output:analog-stereo;'
+alias multimon='xrandr --output HDMI1 --mode 1440x900 --right-of LVDS1 --primary'
+#pactl set-card-profile 0 output:analog-stereo;
 alias topmon='xrandr --output HDMI1 --mode 1440x900;xrandr --output LVDS1 --off'
 # sshfs
 alias csifmount='sudo sshfs -o allow_other cfay@pc51.cs.ucdavis.edu:/home/cfay/ /media/net1/'

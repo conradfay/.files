@@ -21,7 +21,7 @@ URxvt*italicFont: xft:Terminus:size=9
 URxvt*bolditalicFont: xft:Terminus:size=9
 
 ! Plugins
-URxvt.perl-ext-common:      default,clipboard,fullscreen
+URxvt.perl-ext-common:      default,clipboard
 URxvt.iso14755: False
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
@@ -55,4 +55,3 @@ URxvt.clipboard.autocopy: true
 ! white
 *color7: #888888
 *color15: #E8E8D3
-

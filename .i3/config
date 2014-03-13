@@ -11,11 +11,15 @@
 
 set $mod Mod4
 
+# Custom Keybindings
+bindsym $mod+t exec /home/conradfay/.files/bin/toggle-touchpad.sh
+bindsym $mod+Shift+z exec /home/conradfay/.files/bin/toggle-wheel-emulation.sh
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 #font -misc-tamsyn-medium-*-*--14-101-*-*-*-*-*
 #font -*-lemon-medium-*-*-*-*-*-*-*-*-*-*-*
-font pango:Terminus 9 
+font pango:Terminus 9
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
@@ -26,7 +30,7 @@ font pango:Terminus 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec terminology
 
 # kill focused window
 bindsym $mod+Shift+c kill
