@@ -23,6 +23,7 @@ Bundle 'git://github.com/zeis/vim-kolor.git'
 Bundle 'git://github.com/Lokaltog/vim-powerline.git'
 Bundle 'git://github.com/Shougo/unite.vim.git'
 Bundle 'git://github.com/Shougo/vimproc.vim'
+Bundle 'git://github.com/vim-scripts/LanguageTool.git'
 "Bundle 'git://github.com/Valloric/YouCompleteMe.git'
 "Bundle 'git://github.com/klen/python-mode.git'
 "Bundle 'git://github.com/freitass/todo.txt-vim.git'
@@ -47,6 +48,7 @@ noremap <leader>z :NERDTreeToggle<CR>
 
 " Syntastic
 let g:syntastic_cpp_include_dirs = ['include', '../include']
+let g:syntastic_cpp_compiler_options = '-std=c++11'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -89,6 +91,9 @@ colorscheme kolor
 set mouse=a
 noremap <ScrollWheelUp> <C-Y> <C-Y> <C-Y>
 noremap <ScrollWheelDown> <C-E> <C-E> <C-E>
+
+" Latex
+let g:tex_flavor='latex'
 
 " GUI
 set guioptions-=T " Remove toolbar

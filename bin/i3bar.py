@@ -106,9 +106,14 @@ class BatWidget(TextWidget):
     color = LIGHT_BLUE
 
     def update(self):
+        '''
         BAT_PART_UNICODE = '\u2b91'
         BAT_PLUGGED_UNICODE = '\u2b8e'
         BAT_FULL_UNICODE = '\u2b92'
+        '''
+        BAT_PART_UNICODE = 'bat:'
+        BAT_PLUGGED_UNICODE = 'bat plugged'
+        BAT_FULL_UNICODE = 'bat full'
 
         text = ''
         if 'Charging' in self.__bat_stats():
@@ -172,7 +177,8 @@ class DateWidget(TextWidget):
 
     def update(self):
         text = ''
-        CLOCK_UNICODE = '\u2b67'
+        #CLOCK_UNICODE = '\u2b67'
+        CLOCK_UNICODE = ''
 
         date = subprocess.Popen(
             ['date', '+%a %m/%d/%y %R:%S'],
@@ -193,9 +199,14 @@ class VolWidget(TextWidget):
 
     def update(self):
         text = ''
+        '''
         SPEAKER_UNICODE = '\u2b9e'
         HEADPHONE_UNICODE = '\u2b9c'
         MUTE_UNICODE = '\u2b9d'
+        '''
+        SPEAKER_UNICODE = 'vol:'
+        HEADPHONE_UNICODE = 'vol:'
+        MUTE_UNICODE = 'mute'
         if 'on' in self.__headphone_status():
             text = HEADPHONE_UNICODE + ' ' + self.__vol_level()
         elif 'on' in self.__speaker_status() and 'off' in self.__headphone_status():

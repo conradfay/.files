@@ -9,6 +9,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+exec source /home/conradfay/.xinitrc
+
 set $mod Mod4
 
 # Custom Keybindings
