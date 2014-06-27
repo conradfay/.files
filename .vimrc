@@ -21,16 +21,16 @@ Bundle 'git://github.com/Raimondi/delimitMate.git'
 Bundle 'git://github.com/hynek/vim-python-pep8-indent.git'
 Bundle 'git://github.com/zeis/vim-kolor.git'
 Bundle 'git://github.com/Lokaltog/vim-powerline.git'
-Bundle 'git://github.com/Shougo/unite.vim.git'
-Bundle 'git://github.com/Shougo/vimproc.vim'
 Bundle 'git://github.com/vim-scripts/LanguageTool.git'
 Bundle 'git://github.com/gregsexton/MatchTag.git'
 Bundle 'git://github.com/Yggdroot/indentLine.git'
-Bundle 'git://github.com/sophacles/vim-processing.git'
+"Bundle 'git://github.com/Shougo/vimproc.vim'
+"Bundle 'git://github.com/Shougo/unite.vim.git'
+"Bundle 'git://github.com/sophacles/vim-processing.git'
 "Bundle 'git://github.com/Valloric/YouCompleteMe.git'
 "Bundle 'git://github.com/klen/python-mode.git'
 "Bundle 'git://github.com/freitass/todo.txt-vim.git'
-"Bundle 'git://github.com/kien/ctrlp.vim.git'
+Bundle 'git://github.com/kien/ctrlp.vim.git'
 
 " Calendar
 let g:calendar_google_calendar = 1
@@ -38,7 +38,7 @@ let g:calendar_google_task = 1
 
 " CtrlP
 "let g:ctrlp_cmd = 'CtrlPMixed'
-"set wildignore+=*/doc/*,*.o
+set wildignore+=*/ENV/*,*.o,*.pyc
 
 " EasyMotion
 let g:EasyMotion_leader_key = '<Leader>'
@@ -71,9 +71,13 @@ let g:neocomplcache_enable_smart_case = 1
 noremap <leader>x :Tagbar<CR>
 
 " Unite
-let g:unite_source_history_yank_enable = 1
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-noremap <C-p> :Unite -no-split -buffer-name=files -start-insert file_rec/async<cr>
+"let g:unite_source_history_yank_enable = 1
+"call unite#filters#matcher_default#use(['matcher_fuzzy'])
+"call unite#filters#sorter_default#use(['matcher_fuzzy'])
+"call unite#custom#source('file,file/new,buffer,file_rec,line,file_rec/async', 'matchers', 'matcher_fuzzy')
+"call unite#custom#source('file,file/new,buffer,file_rec,line,file_rec/async', 'ignore_pattern', 'ENV')
+"nnoremap <C-p> :Unite -no-split -buffer-name=files -start-insert file_rec<cr>
+"nnoremap <C-k> :Unite -no-split -buffer-name=search -start-insert line<cr>
 
 " YouCompleteMe *REQUIRES PYTHON2.7*
 "let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
